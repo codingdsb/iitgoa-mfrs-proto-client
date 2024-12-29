@@ -10,7 +10,7 @@ import {
   Pagination,
   PaginationContent,
   PaginationItem,
-  PaginationLink,
+  PaginationLink,server
 } from "@/components/ui/pagination";
 
 import { Button } from "@/components/ui/button";
@@ -198,7 +198,7 @@ const ManageAnnouncementsPage = ({userData}) => {
                   </span>
                 </CardHeader>
                 {
-                  item.user_id===userData.user_id?<CardContent>
+                  userData && item.user_id===userData.user_id?<CardContent>
                   <span className='block leading-7 mt-0 mb-3'>
                     {item.announcement_message}
                   </span>
