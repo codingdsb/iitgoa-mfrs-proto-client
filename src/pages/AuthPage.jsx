@@ -56,7 +56,7 @@ const AuthPage = () => {
     } catch (error) {
       toast({
         title: "Error",
-        description: error.response.data.message || JSON.stringify(error),
+        description: JSON.stringify(error),
         variant: "destructive",
       });
     }
