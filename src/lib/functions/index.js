@@ -1,0 +1,1 @@
+export const checkTokenExpiredError = (errorMessage)  => errorMessage === "Token expired please login again!!"
