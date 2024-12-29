@@ -103,10 +103,17 @@ const AuthPage = () => {
 
   return (
     <div className='flex h-screen flex-col items-center justify-center space-y-6'>
-      <img src='/logo-full.png' />
-      <p className='text-2xl md:text-4xl lg:text-5xl'>
+      <div className="flex border border-gray-200 p-3 shadow rounded-md w-[90%] min-w-[300px] max-w-[400px] items-center justify-between">
+      <img src='/logo.jpeg' style={{height:"70px"}}/>
+      <div className="">
+      <p className='text-4xl w-[100%] text-right'>
+        MFRS
+      </p>
+      <p className='text-xl' style={{color:"gray"}}>
         Mess Food Review System
       </p>
+      </div>
+      </div>
       <Tabs
         defaultValue='login'
         className='w-[90%] min-w-[300px] max-w-[400px]'
@@ -143,20 +150,22 @@ const AuthPage = () => {
               <div className='flex justify-center items-center'>
                 <Input
                   type='text'
-                  placeholder='user'
+                  placeholder='Email Address'
                   value={registerEmail}
+                  style={{borderRadius: "0.5rem 0 0 0.5rem",borderRight:"none"}}
                   onChange={(e) => setRegisterEmail(e.target.value)}
                 />
-                @iitgoa.ac.in
+                <span className="border border-gray-300 rounded-md p-[0.46rem] bg-gray-200 text-gray-600 text-sm" style={{borderRadius: "0 0.5rem 0.5rem 0 ",borderLeft:"none"}}>@iitgoa.ac.in</span>
               </div>
 
               <Input
                 type='password'
                 placeholder='Create a password'
                 value={registerPassword}
+      
                 onChange={(e) => setRegisterPassword(e.target.value)}
               />
-              <Button onClick={handleRegister}>Submit</Button>
+              <Button  onClick={handleRegister}>Signup</Button>
             </CardContent>
           </Card>
         </TabsContent>
@@ -175,10 +184,12 @@ const AuthPage = () => {
               <div className='flex justify-center items-center'>
                 <Input
                   type='text'
+                  placeholder='Email Address'
+                  style={{borderRadius: "0.5rem 0 0 0.5rem",borderRight:"none"}}
                   value={loginEmail}
                   onChange={(e) => setLoginEmail(e.target.value)}
                 />
-                @iitgoa.ac.in
+              <span className="border border-gray-300 rounded-md p-[0.44rem] bg-gray-200 text-gray-600 text-sm" style={{borderRadius: "0 0.5rem 0.5rem 0 ",borderLeft:"none"}}>@iitgoa.ac.in</span>
               </div>
               <Input
                 type='password'
