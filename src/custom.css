@@ -54,6 +54,7 @@
     background: url("https://upload.wikimedia.org/wikipedia/commons/3/33/Microsoft_login_screen.svg") !important;
     background-size: cover !important;
     padding: 8px;
+    min-height: 100vh;
 }
 .announcement_page{
     min-height: 100vh;
