@@ -47,36 +47,15 @@ const Announcements = () => {
     getAnnouncements(currentPage)
   }, []);
   return (
-    <div className='flex  justify-center w-[100%]'>
-      <div className='h-full flex flex-col align-center justify-start shadow h-[100%]' style={{width:"95%",maxWidth:"900px","position":"relative"}}>
+    <div className='flex  justify-center w-[100%] announcement_page'>
+      <div className='h-full fr flex flex-col align-center justify-start shadow h-[100%]' style={{width:"95%",maxWidth:"900px","position":"relative"}}>
         <div className='flex  ml-5 w-[90%] space-y-8  h-fit mt-12 '>
-          <span className='scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>
+          <span className='scroll-m-20  pb-3 text-2xl font-semibold tracking-tight first:mt-0'>
             Announcements
           </span>
         </div>
-        <div className='flex  w-[90%] space-y-8  h-fit mt-12'>
-          
-          <Pagination>
-            <PaginationContent>
-              {totalPages &&
-                totalPages > 0 &&
-                Array.from({ length: totalPages }, (_, index) => index + 1).map(
-                  (page) => (
-                    <PaginationItem
-                      key={page}
-                      onClick={() => getAnnouncements(page)}
-                    >
-                      <PaginationLink isActive={page === currentPage}>
-                        {page}
-                      </PaginationLink>
-                    </PaginationItem>
-                  )
-                )}
-            </PaginationContent>
-          </Pagination>
-        </div>
-        <div className='flex flex-col ml-5  w-[100%] space-y-8  h-fit mt-12'>
-          <span className="scroll-m-20 text-2xl font-semibold tracking-tight">Announcements: {announcements.length}</span>
+
+        <div className='flex flex-col ml-5  w-[100%] space-y-8 mb-6  h-fit'>
           {announcements.map((item, key) => {
             return (
               <Card key={key} className='w-[90%]'>
@@ -95,7 +74,30 @@ const Announcements = () => {
             );
           })}
         </div>
+        <div className='flex justify-end w-[100%] flex-col '>
+          <span className='ml-5 text-3xs text-muted-foreground text-center' style={{width:"100%"}}> Page {currentPage} of {totalPages}</span>
+        <Pagination className="mt-1 mb-10 ml-4">
+            <PaginationContent>
+              {totalPages &&
+                totalPages > 0 &&
+                Array.from({ length: totalPages }, (_, index) => index + 1).map(
+                  (page) => (
+                    <PaginationItem
+                      style={{cursor:"pointer"}}
+                      key={page}
+                      onClick={() => getAnnouncements(page)}
+                    >
+                      <PaginationLink isActive={page === currentPage}>
+                        {page}
+                      </PaginationLink>
+                    </PaginationItem>
+                  )
+                )}
+            </PaginationContent>
+          </Pagination>
+          </div>        
       </div>
+      
     </div>
   )
 }

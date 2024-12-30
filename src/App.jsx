@@ -23,6 +23,7 @@ import WastageStatistics from "./pages/WastageStatistics";
 import AdminPollsPage from "./pages/AdminPollsPage";
 import Announcements from "./pages/Announcements";
 import Polls from "./pages/Polls";
+import "./custom.css"
 const App = () => {
   const { user, login } = useStore();
   const [userData,setUserData] = useState()
@@ -117,7 +118,7 @@ const RegularLayout = () => {
 };
 
 const AdminLayout = () => (
-  <SidebarProvider>
+  <SidebarProvider style={{width:"100vw",overflow:"hidden"}}>
     <AdminSidebar />
     <main>
       

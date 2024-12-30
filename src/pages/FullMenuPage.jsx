@@ -68,7 +68,8 @@ const FullMenuPage = () => {
 
   return (
     <>
-      <div>
+      <div className="announcement_page menu_page">
+        <div>
         <Table>
           <TableHeader>
             <TableHead>MEAL</TableHead>
@@ -148,6 +149,7 @@ const FullMenuPage = () => {
             </TableRow>
           </TableBody>
         </Table>
+      </div>
       </div>
     </>
   );

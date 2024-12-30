@@ -71,7 +71,12 @@ const ManageUsersPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col w-[85vw] p-24 space-y-4">
+    <div className="h-full w-[85vw] ml-10 flex flex-col align-center justify-start">
+      <div className='flex   w-[90%] space-y-8  h-fit mt-12 '>
+          <span className='scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>
+            Manage Users
+          </span>
+        </div>
       <span>Showing page {currentPage} of {totalPages}</span>
       <Pagination>
         <PaginationContent>

@@ -44,34 +44,6 @@ const AdminFeedBackPage = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const navigate = useNavigate();
-  const deleteAnnouncement = async (announcement_id) => {
-    try {
-      const response = await axios.post(
-        `${constants.API_URL}/mess/announcement/delete`,
-        { announcement_id: announcement_id },
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
-      getAnnouncements(currentPage);
-    } catch (error) {
-      if (checkTokenExpiredError(error.response.data.message)) {
-        navigate("/auth");
-        localStorage.removeItem("token");
-        toast({
-          description: error.response.data.message + " Please login again.",
-        });
-      } else {
-        toast({
-          title: "Error",
-          description: error.response.data.message,
-          variant: "destructive",
-        });
-      }
-    }
-  };
   const getFeedbacks = async (page) => {
     try {
       const response = await axios.post(
@@ -150,7 +122,7 @@ const AdminFeedBackPage = () => {
                   (page) => (
                     <PaginationItem
                       key={page}
-                      onClick={() => getAnnouncements(page)}
+                      onClick={() => getFeedbacks(page)}
                     >
                       <PaginationLink isActive={page === currentPage}>
                         {page}

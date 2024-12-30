@@ -190,7 +190,7 @@ const AdminPollsPage = () => {
                     <div key={k2} className="flex justify-between  border border-gray-300 rounded-md py-1 px-5" style={{position:"relative"}}>
                       <span>{option}</span>
                       <span style={{width:(totalVotes!=0?poll.results[k2]*100/totalVotes:0)+"%",backgroundColor:"lightgray",position:"absolute",top:0,left:"0",height:"100%",zIndex:-1}} className="rounded-md">{}</span>
-                      <span className="font-semibold ">{totalVotes!=0?poll.results[k2]*100/totalVotes:0}%</span>
+                      <span className="font-semibold ">{Math.floor(totalVotes!=0?poll.results[k2]*100/totalVotes:0)}%</span>
                     </div>
                   );
                 })}

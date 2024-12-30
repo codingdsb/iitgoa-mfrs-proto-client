@@ -83,8 +83,8 @@ const FeedbackPage = () => {
     }
   };
   return (
-    <div className="flex justify-center">
-      <Card className="max-w-[600px] w-[90vw]">
+    <div className="flex justify-center announcement_page min-h-screen ">
+      <Card className="max-w-[600px] w-[90vw] h-fit">
         <CardHeader>
           <CardTitle className="text-2xl">Add your Feedback</CardTitle>
           <CardDescription>Give you feedback on today's meal.</CardDescription>
@@ -134,7 +134,7 @@ const FeedbackPage = () => {
 
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="name" className="mb-3">
-                  Add you feedback
+                  Add your feedback
                 </Label>
                 {questions.map((question, index) => (
                   <div className="border rounded-md p-4">

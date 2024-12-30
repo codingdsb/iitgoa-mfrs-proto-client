@@ -112,9 +112,9 @@ const GiveSuggestionPage = () => {
   const [value, setValue] = useState("")
 
   return (
-    <div className='flex justify-center'>
+    <div className='flex justify-center announcement_page min-h-screen'>
      
-    <Card className="max-w-[600px] w-[90vw]">
+    <Card className="max-w-[600px] w-[90vw] h-fit">
       <CardHeader>
         <CardTitle className="text-2xl">Give Suggestion</CardTitle>
         <CardDescription>Your suggestion makes a difference.</CardDescription>

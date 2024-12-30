@@ -51,7 +51,7 @@ const AuthPage = () => {
       navigate("/");
       toast({
         title: "Success",
-        description: response.data.message,
+        description: response.data.message ,
       });
     } catch (error) {
       toast({
@@ -95,21 +95,21 @@ const AuthPage = () => {
     } catch (error) {
       toast({
         title: "Error",
-        description: error.response.data.message,
+        description: error.response.data.message || JSON.stringify(error),
         variant: "destructive",
       });
     }
   };
 
   return (
-    <div className='flex h-screen flex-col items-center justify-center space-y-6'>
-      <div className="flex border border-gray-200 p-3 shadow rounded-md w-[90%] min-w-[300px] max-w-[400px] items-center justify-between">
+    <div className='flex h-screen flex-col items-center justify-center space-y-6 auth_page'>
+      <div className="flex border border-gray-200 p-3 shadow rounded-xl w-[90%]  min-w-[300px] max-w-[400px] items-center justify-between" style={{background:"white"}}>
       <img src='/logo.jpeg' style={{height:"70px"}}/>
       <div className="">
       <p className='text-4xl w-[100%] text-right'>
         MFRS
       </p>
-      <p className='text-xl' style={{color:"gray"}}>
+      <p className='text-3sm' style={{color:"gray"}}>
         Mess Food Review System
       </p>
       </div>
@@ -162,7 +162,7 @@ const AuthPage = () => {
                 type='password'
                 placeholder='Create a password'
                 value={registerPassword}
-      
+                style={{marginBottom:"1rem"}}
                 onChange={(e) => setRegisterPassword(e.target.value)}
               />
               <Button  onClick={handleRegister}>Signup</Button>
@@ -195,9 +195,10 @@ const AuthPage = () => {
                 type='password'
                 placeholder='Enter your password'
                 value={loginPassword}
+                style={{marginBottom:"1rem"}}
                 onChange={(e) => setLoginPassword(e.target.value)}
               />
-              <Button onClick={handleLogin}>Submit</Button>
+              <Button onClick={handleLogin}>Login</Button>
             </CardContent>
           </Card>
         </TabsContent>

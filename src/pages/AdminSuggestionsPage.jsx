@@ -20,9 +20,24 @@ const AdminSuggestionsPage = () => {
   const { user } = useStore();
   const navigate = useNavigate();
   const { toast } = useToast();
-
+  const [menu, setMenu] = useState([]);
   /// API Calls
-
+  useEffect(()=>{
+    const fetchMenu = async () => {
+      const response = await axios.get(`${constants.API_URL}/mess/menu/full`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const data =await response.data.data.map((item)=>{return item.menu});
+      let meals = []
+      for(let i of data){
+        for (let j of i){
+          meals.push({id:j.menu_id,name:j.meal_item})}}
+      setMenu(meals);
+    };
+    fetchMenu();
+  },[])
   // get suggestions data by pagination
   const getSuggestions = async (page) => {
     try {
@@ -60,7 +75,7 @@ const AdminSuggestionsPage = () => {
 
   return (
     <>
-      <div className="h-full w-[80vw] flex flex-col align-center justify-start ml-10">
+      <div className="h-full w-[85vw] flex flex-col align-center justify-start">
         <div className="flex  ml-10 w-[90%] space-y-8  h-fit mt-12 ">
           <span className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
             Suggestions
@@ -91,7 +106,7 @@ const AdminSuggestionsPage = () => {
                 )}
             </PaginationContent>
           </Pagination>
-                <div className="flex flex-warp">
+                <div className="flex flex-warp w-[95%]">
           {suggestions &&
             suggestions.map((suggestion) => (
               <Card key={suggestion.id} className="w-[400px] ml-10 mt-4 mb-2">
@@ -103,14 +118,16 @@ const AdminSuggestionsPage = () => {
                     <span className="font-bold">Item To Add:</span>{" "}
                     {suggestion.changes_new_item}
                   </span>
-                  <span className="text-sm font-medium leading-none">
+                  {suggestion.changes_old_item?<span className="text-sm font-medium leading-none">
                     <span className="font-bold">Item To Remove:</span>{" "}
-                    {suggestion.changes_old_item}
-                  </span>
-                  <span className="text-sm font-medium leading-none">
+                    {menu.length>0 ?(menu.filter((item) => item.id == suggestion.changes_old_item))[0]?.name:""}
+                  </span>:""}
+                  {
+                    suggestion.reason?<span className="text-sm font-medium leading-none">
                     <span className="font-bold">Reason:</span>{" "}
                     {suggestion.reason}
-                  </span>
+                  </span>:""
+                  }
                 </CardContent>
               </Card>
             ))}

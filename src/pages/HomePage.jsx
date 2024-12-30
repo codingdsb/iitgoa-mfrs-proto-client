@@ -176,7 +176,7 @@ const HomePage = () => {
       });
     }
   };
-
+  
   useEffect(() => {
     getNextMealMenu();
     getAnnouncements();
@@ -187,8 +187,8 @@ const HomePage = () => {
   return (
     <>
       {/* For laptops/desktops */}
-      <div className="flex flex-col  space-y-4 lg:flex-row lg:justify-center lg:space-x-8">
-        <div className="lg:w-1/3 space-y-8">
+      <div className="flex flex-col home_page  space-y-4 lg:flex-row lg:justify-center lg:space-x-8">
+        <div className="lg:w-1/3 space-y-8 mt-4">
           <Card>
             <CardHeader>
               <CardTitle>
@@ -257,7 +257,7 @@ const HomePage = () => {
                        <div onClick={()=>{if (!poll.is_closed){answerToPoll(k2+1,poll.poll_id)}}} key={k2} className="flex justify-between  border border-gray-300 rounded-md py-1 px-5" style={{position:"relative",cursor:"pointer",borderColor:(poll.your_answer===(k2+1)?"red":"lightgray")}}>
                          <span style={{zIndex:2}}>{option}</span>
                          <span style={{width:(totalVotes!=0?poll.results[k2]*100/totalVotes:0)+"%",backgroundColor:"lightgray",position:"absolute",top:0,left:"0",height:"100%",zIndex:1}} className="rounded-md"></span>
-                         <span style={{zIndex:2}} className="font-semibold ">{totalVotes!=0?poll.results[k2]*100/totalVotes:0}%</span>
+                         <span style={{zIndex:2}} className="font-semibold ">{Math.floor(totalVotes!=0?poll.results[k2]*100/totalVotes:0)}%</span>
                        </div>
                      );
                    })}

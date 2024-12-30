@@ -184,7 +184,7 @@ const WastageStatistics = () => {
           </span>
         </div>
       <div className="flex  w-[90%] justify-between ">
-        <div className="flex flex-col ml-10 my-24 space-y-4 w-[400px]">
+        <div className="flex flex-col ml-10 my-24 space-y-4 w-[400px] border p-4 border-gray-300 rounded-lg">
           <span className="text-lg font-semibold">Add/Update Wastage</span>
           <input
             type="date"
@@ -214,7 +214,7 @@ const WastageStatistics = () => {
 
           <Button onClick={addWastage}>Submit</Button>
         </div>
-        <ChartContainer className="w-[500px] h-[400px]" config={chartConfig}>
+        <ChartContainer className="w-[500px] border border-gray-300 p-3 shadow rounded-lg h-[400px]" config={chartConfig}>
           <AreaChart
             accessibilityLayer
             data={wastageData}
