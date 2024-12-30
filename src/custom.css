@@ -1,5 +1,5 @@
 .auth_page{
-    background: url("overlay.svg");
+    background: url("https://upload.wikimedia.org/wikipedia/commons/3/33/Microsoft_login_screen.svg");
 }
 .pc_nav{
     position: fixed;
@@ -51,13 +51,13 @@
 }
 .home_page{
     padding-top: 100px;
-    background: url("overlay.svg") !important;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/3/33/Microsoft_login_screen.svg") !important;
     background-size: 100% 100% !important;
     padding: 8px;
 }
 .announcement_page{
     padding-top: 100px;
-    background: url("overlay.svg") !important;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/3/33/Microsoft_login_screen.svg") !important;
     background-size: 100% 100% !important;
     padding: 8px;
 }
