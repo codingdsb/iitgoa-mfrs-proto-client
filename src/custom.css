@@ -52,13 +52,14 @@
 .home_page{
     padding-top: 100px;
     background: url("https://upload.wikimedia.org/wikipedia/commons/3/33/Microsoft_login_screen.svg") !important;
-    background-size: 100% 100% !important;
+    background-size: cover !important;
     padding: 8px;
 }
 .announcement_page{
+    min-height: 100vh;
     padding-top: 100px;
     background: url("https://upload.wikimedia.org/wikipedia/commons/3/33/Microsoft_login_screen.svg") !important;
-    background-size: 100% 100% !important;
+    background-size: cover!important;
     padding: 8px;
 }
 .announcement_page .fr{

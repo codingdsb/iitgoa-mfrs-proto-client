@@ -150,7 +150,6 @@ const AdminHomePage = () => {
     fetchWastages()
     getFeedbacks()
   }, []);
-  console.log(wastages)
   return (
     <div className='h-full w-[85vw] flex flex-col align-center justify-start ml-10 admin_page'>
       <div className='flex flex-col justify-center w-[90%] space-y-8  h-fit '>
@@ -173,7 +172,7 @@ const AdminHomePage = () => {
               <CardContent>
                 <div className='flex h-[100px] flex-col mt-[30px] w-[100%] items-center'>
                   <span className='text-[2rem] mr-5'>{avg}☆</span>
-                  <span className='text-xl'>Average yesterday's ratings</span>
+                  <span className='text-xl'>Yesterday's Average ratings</span>
                 </div>
               </CardContent>
             </Card>
