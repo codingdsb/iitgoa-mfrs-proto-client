@@ -16,7 +16,6 @@ import { useNavigate } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 
 const Polls = () => {
-  const [announcements, setAnnouncements] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
   const [polls,setPolls] = useState([])
@@ -30,7 +29,7 @@ const Polls = () => {
       },
     });
     const parsed = await resposne.json();
-    setPolls(parsed.data.results.slice(0, 3));
+    setPolls(parsed.data.results);
   };
   const answerToPoll = async (answer, poll_id) => {
     const response = await fetch(`${constants.API_URL}/mess/poll/${poll_id}`, {
