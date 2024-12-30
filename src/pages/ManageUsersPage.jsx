@@ -45,7 +45,7 @@ const ManageUsersPage = () => {
       setUsersList(response.data.data.results);
       setTotalPages(
         Math.ceil(
-          response.data.data.total_results / response.data.data.total_in_page
+          response.data.data.total_pages
         )
       );
       setCurrentPage(response.data.data.page_no);
