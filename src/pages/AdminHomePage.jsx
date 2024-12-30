@@ -171,7 +171,7 @@ const AdminHomePage = () => {
             <Card className="h-[100px] p-0 flex  items-center mr-5 border-red-500 text-red-500">
               <CardContent>
                 <div className='flex h-[100px] flex-col mt-[30px] w-[100%] items-center'>
-                  <span className='text-[2rem] mr-5'>{avg}☆</span>
+                  <span className='text-[2rem] mr-5'>{avg??0}☆</span>
                   <span className='text-xl'>Yesterday's Average ratings</span>
                 </div>
               </CardContent>
