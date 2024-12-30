@@ -97,7 +97,6 @@ const AdminHomePage = () => {
       );
       const avgs = response.data.data.results.reduce((acc, curr) => acc + curr.rating, 0) / response.data.data.results.length;
       setavg(avgs);
-      setavg(NaN)
     } catch (error) {
       if (checkTokenExpiredError(error.response.data.message)) {
         navigate("/auth");
