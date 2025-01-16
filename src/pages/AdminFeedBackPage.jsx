@@ -135,7 +135,7 @@ const AdminFeedBackPage = () => {
         </div>
           <span className="ml-10">Feedbacks : {feedbacks.length}</span>
         <div className='flex ml-10  w-[90%]  h-fit mt-12' style={{flexWrap:"wrap"}}>
-          {[...feedbacks,...feedbacks,...feedbacks,...feedbacks,...feedbacks].map((item, key) => {
+          {[...feedbacks].map((item, key) => {
             return (
               <Card key={key} className='w-[300px] h-fit mr-2 mb-2'>
                 <CardHeader>
