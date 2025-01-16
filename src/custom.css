@@ -1,0 +1,84 @@
+.auth_page{
+    background: url("https://upload.wikimedia.org/wikipedia/commons/3/33/Microsoft_login_screen.svg");
+}
+.pc_nav{
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    display: flex;
+    background: white;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    padding: 10px;
+    height: 80px;
+    border-bottom: 1px solid rgb(190, 190, 190);
+}
+.pc_nav div:nth-child(2) .group{
+    margin-right: 10px;
+}
+.mobile_nav{
+    display: none;
+}
+@media screen and (max-width:1039px) {
+    .pc_nav{
+        display: none;
+    }
+    .mobile_nav{
+        width: 100vw;
+        justify-content: space-between;
+        display: flex;
+        position: fixed;
+        top: 0;
+        height: 80px;
+        left: 0;
+        padding: 0 10px;
+        align-items: center;
+        background: #fff;
+        z-index: 49;
+        border-bottom: 1px solid lightslategrey;
+    }
+    .mobile_nav div{
+        display: flex;
+    }
+    .mobile_nav div{
+        width: calc(50vw + 62px);
+    }
+    .mobile_nav img{
+        height: 40px;
+    }
+}
+.home_page{
+    padding-top: 100px;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/3/33/Microsoft_login_screen.svg") !important;
+    background-size: cover !important;
+    padding: 8px;
+    min-height: 100vh;
+}
+.announcement_page{
+    min-height: 100vh;
+    padding-top: 100px;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/3/33/Microsoft_login_screen.svg") !important;
+    background-size: cover!important;
+    padding: 8px;
+}
+.announcement_page .fr{
+    background: white;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.menu_page{
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    background-size: cover;
+    overflow-x: scroll;
+}
+.menu_page div{
+    transform: scale(0.9);
+    margin-top: -20px;
+    background: white;
+    width: fit-content;
+    border-radius: 10px;
+}
